@@ -111,3 +111,63 @@ span.underline-text.right:hover::after{
 span.underline-text.right::after{
 	left: 100%;
 }
+/** Customized Select Tag UI Design
+USES JAVASCRIPT TO MANAGE SELECT TAG FOR MOBILE AND DESKTOP
+<select-ui name='date-selector' id='date-selector'>
+	<option-ui type='Day'>Day</option-ui>
+	<option-ui type='Month'>Month</option-ui>
+	<option-ui type='Year'>Year</option-ui>
+</select-ui>
+**/
+ui-select{
+	display:block;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	position: relative;
+}
+ui-select ui-option{
+	display: block;
+	padding: 6px 12px;
+}
+ui-select .ui-select-dropdown{
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 100%;
+	width: 100%;
+	overflow-y: auto;
+	height: 200px;
+	background-color: white;
+}
+ui-select select{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+ui-select ui-option[selected]{
+	background-color: skyblue;
+}
+ui-select ui-option:hover{
+	background-color: #0098ff;
+}
+ui-select::before{
+	display: block;
+	width: 100%;
+}
+ui-select:not(:has(ui-option[selected]))::before{
+	content: attr(placeholder);
+	color: #aaa;
+}
+ui-select:has(ui-option[selected])::before,
+ui-select:has(select[selected])::before{
+	content: attr(data-text);
+	color: black;
+}
+	
