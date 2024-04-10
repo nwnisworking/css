@@ -12,7 +12,7 @@
   --f-sh: arial, sans-serif; 
   /* Font body */
   --f-b: arial, sans-serif;
-
+  
   font-size: 16px;
   font-family: var(--f-b);
 }
@@ -158,6 +158,8 @@ a {
   text-decoration: none;
   color: black;
 }
+
+input, button, textarea, select{ font-family: var(--f-b); outline: none; }
 
 button,
 input[type="button"],
